@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concerned Young Citizens Forum — Abuja, Nigeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#0F4A32;
+    --green-mid:#166A45;
+    --gold:#C79A2B;
+    --gold-light:#E7C766;
+    --cream:#F8F5EC;
+    --paper:#FFFFFF;
+    --ink:#1B211C;
+    --ink-soft:#4A5049;
+    --line: rgba(27,33,28,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  /* ---------- Signature wave divider ---------- */
+  .wave-divider{
+    width:100%;
+    height:64px;
+    display:block;
+  }
+  .wave-divider path.g{ fill:var(--green-deep); }
+  .wave-divider path.gd{ fill:var(--gold); }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(248,245,236,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 32px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ height:48px; width:auto; mix-blend-mode:multiply; }
+  .brand-text{ font-family:'Fraunces', serif; font-weight:700; font-size:1.05rem; line-height:1.15; }
+  .brand-text span{ display:block; font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.62rem; letter-spacing:0.08em; color:var(--ink-soft); text-transform:uppercase; margin-top:2px;}
+  nav.links{ display:flex; gap:32px; font-size:0.92rem; font-weight:500; }
+  nav.links a{ text-decoration:none; position:relative; padding-bottom:4px; }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--gold);
+    transition:width .25s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--green-deep); color:#fff; padding:10px 20px; border-radius:2px;
+    font-size:0.85rem; font-weight:600; text-decoration:none; letter-spacing:0.01em;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{ background:var(--gold); color:var(--ink); }
+  .nav-support{
+    background:var(--gold); color:var(--ink); padding:10px 20px; border-radius:2px;
+    font-size:0.85rem; font-weight:700; text-decoration:none; letter-spacing:0.01em;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .nav-support:hover{ background:var(--green-deep); color:#fff; transform:translateY(-1px); }
+  .nav-support svg{ width:16px; height:16px; flex:none; }
+  .menu-btn{ display:none; }
+  @media (max-width:860px){
+    nav.links{ display:none; }
+    .nav-cta{ display:none; }
+  }
+  @media (max-width:640px){
+    .nav-support span.long{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--paper);
+    padding:88px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+    padding-bottom:64px;
+  }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; gap:40px; } }
+  .hero h1{
+    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
+    color:var(--green-deep);
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold);
+  }
+  .hero-sub{
+    margin-top:22px; font-size:1.12rem; color:var(--ink-soft); max-width:52ch;
+  }
+  .hero-actions{ display:flex; gap:16px; margin-top:34px; flex-wrap:wrap; }
+  .btn-primary{
+    background:var(--green-deep); color:#fff; padding:14px 26px; border-radius:2px;
+    text-decoration:none; font-weight:600; font-size:0.95rem;
+    border:1px solid var(--green-deep);
+    transition:all .2s ease;
+  }
+  .btn-primary:hover{ background:var(--cream); color:var(--green-deep); }
+  .btn-ghost{
+    padding:14px 26px; border-radius:2px; text-decoration:none; font-weight:600; font-size:0.95rem;
+    border:1px solid var(--ink); color:var(--ink);
+    transition:all .2s ease;
+  }
+  .btn-ghost:hover{ background:var(--ink); color:#fff; }
+  .btn-support{
+    background:var(--gold); color:var(--ink); padding:14px 26px; border-radius:2px;
+    text-decoration:none; font-weight:700; font-size:0.95rem;
+    border:1px solid var(--gold);
+    display:inline-flex; align-items:center; gap:10px;
+    transition:all .2s ease;
+  }
+  .btn-support svg{ width:18px; height:18px; flex:none; }
+  .btn-support:hover{ background:var(--green-deep); border-color:var(--green-deep); color:#fff; }
+
+  .hero-figure{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-figure img{
+    width:100%; max-width:340px; mix-blend-mode:multiply;
+    filter:drop-shadow(0 18px 30px rgba(15,74,50,0.18));
+  }
+  .hero-ring{
+    position:absolute; inset:0; margin:auto; width:340px; height:340px;
+    border:1px dashed var(--gold); border-radius:50%;
+    animation:spin 60s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){ .hero-ring{ animation:none; } }
+
+  .stat-strip{
+    background:var(--green-deep); color:#fff;
+    display:grid; grid-template-columns:repeat(4,1fr);
+  }
+  .stat-strip div{
+    padding:26px 20px; text-align:center; border-right:1px solid rgba(255,255,255,0.14);
+  }
+  .stat-strip div:last-child{ border-right:none; }
+  .stat-strip .num{ font-family:'IBM Plex Mono', monospace; font-size:1.7rem; font-weight:600; color:var(--gold-light); }
+  .stat-strip .lbl{ font-size:0.78rem; color:rgba(255,255,255,0.82); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em; }
+  @media (max-width:700px){
+    .stat-strip{ grid-template-columns:repeat(2,1fr); }
+    .stat-strip div{ border-bottom:1px solid rgba(255,255,255,0.14); }
+  }
+
+  /* ---------- Section basics ---------- */
+  section{ padding:96px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); color:var(--green-deep); margin-top:10px; }
+  .section-head p{ color:var(--ink-soft); margin-top:16px; font-size:1.02rem; }
+
+  /* ---------- Who we are ---------- */
+  .about{ background:var(--paper); }
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:40px; } }
+  .about-copy p{ color:var(--ink-soft); font-size:1.05rem; margin-bottom:18px; }
+  .vm-card{
+    background:var(--cream); border-left:3px solid var(--gold);
+    padding:26px 28px; margin-bottom:20px;
+  }
+  .vm-card h4{ color:var(--green-deep); font-size:1.15rem; margin-bottom:8px; }
+  .vm-card p{ color:var(--ink-soft); font-size:0.98rem; }
+
+  /* ---------- Focus areas ---------- */
+  .focus{ background:var(--cream); }
+  .focus-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:2px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:860px){ .focus-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .focus-grid{ grid-template-columns:1fr; } }
+  .focus-card{
+    background:var(--paper); padding:34px 28px; transition:background .2s ease;
+  }
+  .focus-card:hover{ background:var(--green-deep); }
+  .focus-card:hover *{ color:#fff !important; }
+  .focus-icon{ width:34px; height:34px; margin-bottom:18px; display:block; color:var(--green-deep); }
+  .focus-card:hover .focus-icon{ color:var(--gold-light) !important; }
+  .focus-card h4{ font-size:1.08rem; color:var(--green-deep); margin-bottom:8px; }
+  .focus-card p{ font-size:0.92rem; color:var(--ink-soft); }
+
+  /* ---------- Programs ---------- */
+  .programs{ background:var(--paper); }
+  .prog-list{ display:grid; grid-template-columns:1fr; gap:0; border-top:1px solid var(--line); }
+  .prog-row{
+    display:grid; grid-template-columns:70px 1fr 220px; gap:20px; align-items:center;
+    padding:24px 0; border-bottom:1px solid var(--line);
+  }
+  @media (max-width:700px){ .prog-row{ grid-template-columns:44px 1fr; } .prog-row .prog-tag{ display:none; } }
+  .prog-idx{ font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:0.9rem; }
+  .prog-row h4{ font-size:1.12rem; color:var(--ink); font-weight:600; font-family:'Work Sans'; }
+  .prog-tag{ font-size:0.78rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; text-align:right; }
+
+  /* ---------- Gallery ---------- */
+  .gallery{ background:var(--green-deep); color:#fff; }
+  .gallery .section-head h2{ color:#fff; }
+  .gallery .section-head p{ color:rgba(255,255,255,0.75); }
+  .gallery .eyebrow{ color:var(--gold-light); }
+  .gal-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:20px; }
+  @media (max-width:760px){ .gal-grid{ grid-template-columns:1fr; } }
+  .gal-frame{ overflow:hidden; border:1px solid rgba(255,255,255,0.18); }
+  .gal-frame img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .gal-frame:hover img{ transform:scale(1.04); }
+  .gal-caption{ font-size:0.85rem; color:rgba(255,255,255,0.65); margin-top:10px; font-family:'IBM Plex Mono', monospace; }
+
+  /* ---------- Voices strip ---------- */
+  .voices{ background:var(--cream); padding:64px 0; overflow:hidden; }
+  .marquee{ display:flex; gap:48px; white-space:nowrap; animation:scroll 32s linear infinite; width:max-content; }
+  @media (prefers-reduced-motion: reduce){ .marquee{ animation:none; } }
+  @keyframes scroll{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .marquee span{
+    font-family:'Fraunces', serif; font-style:italic; font-size:1.6rem; color:var(--green-mid);
+  }
+  .marquee span.gold{ color:var(--gold); }
+
+  /* ---------- Join CTA ---------- */
+  .cta-band{
+    background:var(--paper);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .cta-inner{
+    display:grid; grid-template-columns:1.3fr 0.7fr; gap:40px; align-items:center;
+    padding:72px 0;
+  }
+  @media (max-width:800px){ .cta-inner{ grid-template-columns:1fr; } }
+  .cta-inner h3{ font-size:clamp(1.7rem,3vw,2.2rem); color:var(--green-deep); }
+  .cta-inner p{ color:var(--ink-soft); margin-top:14px; max-width:52ch; }
+  .cta-actions{ display:flex; flex-direction:column; gap:14px; }
+
+  /* ---------- Support ---------- */
+  .support{ background:var(--cream); }
+  .support-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:860px){ .support-grid{ grid-template-columns:1fr; } }
+  .support-card{
+    background:var(--paper); padding:38px 32px; display:flex; flex-direction:column; align-items:flex-start;
+  }
+  .support-card svg{ width:32px; height:32px; color:var(--gold); margin-bottom:20px; }
+  .support-card h4{ font-size:1.15rem; color:var(--green-deep); margin-bottom:10px; }
+  .support-card p{ font-size:0.94rem; color:var(--ink-soft); margin-bottom:22px; flex:1; }
+  .support-link{
+    font-family:'IBM Plex Mono', monospace; font-size:0.82rem; font-weight:600;
+    text-decoration:none; color:var(--green-deep); letter-spacing:0.02em;
+    border-bottom:1px solid var(--green-deep); padding-bottom:2px;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .support-link:hover{ color:var(--gold); border-color:var(--gold); }
+
+  /* ---------- Contact ---------- */
+  .contact{ background:var(--green-deep); color:#fff; }
+  .contact .eyebrow{ color:var(--gold-light); }
+  .contact h2{ color:#fff; }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:40px; }
+  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:44px; } }
+  .contact-item{ margin-bottom:26px; }
+  .contact-item .lbl{ font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-light); }
+  .contact-item .val{ font-size:1.12rem; margin-top:6px; }
+  .contact-item a{ text-decoration:none; }
+  .contact-item a:hover{ color:var(--gold-light); }
+
+  form{ display:flex; flex-direction:column; gap:14px; }
+  form input, form textarea{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.28);
+    color:#fff; padding:14px 16px; font-family:'Work Sans'; font-size:0.95rem;
+    border-radius:2px;
+  }
+  form input::placeholder, form textarea::placeholder{ color:rgba(255,255,255,0.5); }
+  form input:focus, form textarea:focus{ outline:2px solid var(--gold-light); outline-offset:2px; }
+  form button{
+    background:var(--gold); color:var(--ink); border:none; padding:14px 20px;
+    font-weight:700; font-size:0.95rem; cursor:pointer; border-radius:2px;
+    transition:background .2s ease;
+  }
+  form button:hover{ background:var(--gold-light); }
+  form button:focus-visible, a:focus-visible, .nav-cta:focus-visible{ outline:2px solid var(--gold-light); outline-offset:3px; }
+
+  /* ---------- Footer ---------- */
+  footer{ background:#0B3524; color:rgba(255,255,255,0.65); padding:32px 0; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:0.85rem; }
+  .footer-row .fbrand{ color:#fff; font-family:'Fraunces', serif; font-weight:600; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/logo.jpg" alt="CYCF logo">
+      <div class="brand-text">Concerned Young<br>Citizens Forum<span>Abuja &middot; Nigeria</span></div>
+    </div>
+    <nav class="links">
+      <a href="#about">Who We Are</a>
+      <a href="#focus">Focus Areas</a>
+      <a href="#programs">Programs</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="nav-cta" href="#contact">Join The Movement</a>
+      <a class="nav-support" href="#support">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <span class="long">Support Us</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Non partisan &middot; Youth driven &middot; Abuja, Nigeria</p>
+      <h1>From concern <em>to action.</em></h1>
+      <p class="hero-sub">Concerned Young Citizens Forum organises young people across Abuja and Nigeria around leadership, advocacy and civic participation, so that the next generation of decision makers is already at work today.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contact">Join The Movement</a>
+        <a class="btn-support" href="#support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          Support Our Work
+        </a>
+        <a class="btn-ghost" href="#about">Read Our Mission</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="hero-ring"></div>
+      <img src="assets/logo.jpg" alt="Three young citizens raising the Nigerian flag, forum emblem">
+    </div>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1200 60" preserveAspectRatio="none">
+    <path class="g" d="M0,30 C200,60 400,0 600,25 C800,50 1000,10 1200,30 L1200,60 L0,60 Z"></path>
+    <path class="gd" opacity="0.55" d="M0,40 C220,15 420,55 640,32 C860,10 1040,45 1200,20 L1200,60 L0,60 Z"></path>
+  </svg>
+
+  <div class="stat-strip">
+    <div><div class="num">36</div><div class="lbl">States reached</div></div>
+    <div><div class="num">7</div><div class="lbl">Core mandate areas</div></div>
+    <div><div class="num">1000+</div><div class="lbl">Young citizens engaged</div></div>
+    <div><div class="num">2024</div><div class="lbl">Forum founded</div></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <p class="eyebrow">Who We Are</p>
+      <h2 style="color:var(--green-deep); margin:12px 0 22px;">A youth driven organisation building Nigeria's civic future.</h2>
+      <p>Concerned Young Citizens Forum, CYCF, is a non partisan, youth driven organisation committed to leadership, advocacy and citizens participation in national building. We work with students, artisans, first time voters and young professionals across Abuja and beyond.</p>
+      <p>We believe good governance is not something young people wait for. It is something we practice now, in classrooms, in communities and in the conversations that shape policy long before election season begins.</p>
+    </div>
+    <div>
+      <div class="vm-card">
+        <h4>Our Vision</h4>
+        <p>To raise a generation of productive and patriotic citizens for sustainable national development.</p>
+      </div>
+      <div class="vm-card">
+        <h4>Our Mission</h4>
+        <p>To inspire, educate and empower young people through civic participation, leadership and community impact initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="focus" id="focus">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Our Core Mandate</p>
+      <h2>Six areas where we put in the work.</h2>
+      <p>Every programme we run traces back to one of these commitments, chosen because they meet young Nigerians where the need is greatest.</p>
+    </div>
+  </div>
+  <div class="focus-grid">
+    <div class="focus-card">
+      <svg class="focus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01"/></svg>
+      <h4>Good Governance &amp; Gender Equality</h4><p>Promoting transparent leadership and equal opportunity across every programme we run.</p>
+    </div>
+    <div class="focus-card">
+      <svg class="focus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 21v-6M6 9c-2 1-2 4 0 6M18 9c2 1 2 4 0 6"/><circle cx="12" cy="12" r="3"/></svg>
+      <h4>Youth Mentorship &amp; Empowerment</h4><p>Pairing young people with mentors and resources that turn ambition into capability.</p>
+    </div>
+    <div class="focus-card">
+      <svg class="focus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M13 20a3 3 0 0 0-6 0"/><circle cx="17" cy="9" r="2.2"/><circle cx="7" cy="9" r="2.2"/></svg>
+      <h4>Civic Engagement &amp; Economic Development</h4><p>Connecting community voice to the economic decisions that affect daily life.</p>
+    </div>
+    <div class="focus-card">
+      <svg class="focus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0 0 4h13"/><path d="M8 8h8M8 12h6"/></svg>
+      <h4>Education &amp; Social Responsibility</h4><p>Supporting learning and shared accountability in the communities we serve.</p>
+    </div>
+    <div class="focus-card">
+      <svg class="focus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3z"/><path d="M9.5 12.2l1.8 1.8 3.2-3.6"/></svg>
+      <h4>Anti Drugs &amp; Insecurity Campaign</h4><p>Raising awareness and building safer, more resilient neighbourhoods.</p>
+    </div>
+    <div class="focus-card">
+      <svg class="focus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3.5 3.5 0 0 0 7 0l-3-6zM19 7l-3 6a3.5 3.5 0 0 0 7 0l-3-6z"/><path d="M5 7h14M8 21h8"/></svg>
+      <h4>Strengthening Democratic Values</h4><p>Building the habits of participation that keep democracy accountable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What We Do</p>
+      <h2>Programmes built for real communities.</h2>
+      <p>From school compounds to correctional facilities, our work meets young citizens where they already are.</p>
+    </div>
+    <div class="prog-list">
+      <div class="prog-row"><div class="prog-idx">01</div><h4>Public school outreach programmes</h4><div class="prog-tag">Education</div></div>
+      <div class="prog-row"><div class="prog-idx">02</div><h4>Youth leadership conference</h4><div class="prog-tag">Leadership</div></div>
+      <div class="prog-row"><div class="prog-idx">03</div><h4>Community sensitisation campaigns</h4><div class="prog-tag">Advocacy</div></div>
+      <div class="prog-row"><div class="prog-idx">04</div><h4>Volunteer and humanitarian services</h4><div class="prog-tag">Welfare</div></div>
+      <div class="prog-row"><div class="prog-idx">05</div><h4>Capacity building for young people</h4><div class="prog-tag">Skills</div></div>
+      <div class="prog-row"><div class="prog-idx">06</div><h4>Prison outreach</h4><div class="prog-tag">Rehabilitation</div></div>
+      <div class="prog-row"><div class="prog-idx">07</div><h4>Entrepreneurship support</h4><div class="prog-tag">Economic</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">On The Ground</p>
+      <h2>Moments from our outreach.</h2>
+      <p>A look at the Children's Day public school outreach and forum gatherings across Abuja.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-frame"><img src="assets/flyer.jpg" alt="CYCF Children's Day public school outreach flyer and team photos"></div>
+      <div class="gal-frame"><img src="assets/profile.jpg" alt="CYCF members at a community outreach event"></div>
+    </div>
+    <p class="gal-caption">Nyanya junior secondary school II, Abuja &middot; Children's Day outreach</p>
+  </div>
+</section>
+
+<div class="voices">
+  <div class="marquee">
+    <span>We move Nigeria forward</span>
+    <span class="gold">Young voices, national impact</span>
+    <span>Our voice, our power</span>
+    <span class="gold">Turning potentials into progress</span>
+    <span>From concern to action</span>
+    <span>We move Nigeria forward</span>
+    <span class="gold">Young voices, national impact</span>
+    <span>Our voice, our power</span>
+    <span class="gold">Turning potentials into progress</span>
+    <span>From concern to action</span>
+  </div>
+</div>
+
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <p class="eyebrow">Why Join CYCF</p>
+      <h3>Become part of a growing movement of visionary, courageous young citizens.</h3>
+      <p>Whether you volunteer an afternoon or lead a chapter in your community, there is a place for you in building a more accountable Nigeria.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn-primary" style="text-align:center;" href="#contact">Become A Volunteer</a>
+      <a class="btn-ghost" style="text-align:center;" href="#contact">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Support Our Work</p>
+      <h2>Your support keeps the outreach going.</h2>
+      <p>CYCF runs on volunteers and well wishers. Every contribution, in time, materials or funds, goes directly into school outreach, mentorship and community campaigns across Abuja.</p>
+    </div>
+    <div class="support-grid">
+      <div class="support-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+        <h4>Give A Donation</h4>
+        <p>One time or recurring gifts fund school supplies, outreach logistics and volunteer training.</p>
+        <a class="support-link" href="mailto:concernedyoungcitizensforum@gmail.com?subject=Donation%20Enquiry">Donate now &rarr;</a>
+      </div>
+      <div class="support-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h4>Volunteer With Us</h4>
+        <p>Join a chapter, lead an outreach or mentor a young person in your own community.</p>
+        <a class="support-link" href="#contact">Sign up &rarr;</a>
+      </div>
+      <div class="support-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7l-9-4-9 4 9 4 9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+        <h4>Partner With CYCF</h4>
+        <p>Organisations and sponsors can co-host outreach programmes or fund a focus area.</p>
+        <a class="support-link" href="mailto:concernedyoungcitizensforum@gmail.com?subject=Partnership%20Enquiry">Get in touch &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Get Involved</p>
+    <h2>Reach the forum.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="lbl">Address</div>
+          <div class="val">8B Angola Street, Wuse Zone 2, Abuja, Nigeria</div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">Email</div>
+          <div class="val"><a href="mailto:concernedyoungcitizensforum@gmail.com">concernedyoungcitizensforum@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">Phone</div>
+          <div class="val"><a href="tel:+2348037921583">+234 803 792 1583</a> &nbsp;/&nbsp; <a href="tel:+2347039213187">+234 703 921 3187</a></div>
+        </div>
+      </div>
+      <form>
+        <input type="text" placeholder="Full name" required>
+        <input type="email" placeholder="Email address" required>
+        <textarea rows="4" placeholder="Tell us how you would like to get involved"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span><span class="fbrand">CYCF</span> &nbsp;Concerned Young Citizens Forum, empowering young people, building the nation.</span>
+    <span>&copy; 2026 Concerned Young Citizens Forum, Abuja</span>
+  </div>
+</footer>
+
+</body>
+</html>
